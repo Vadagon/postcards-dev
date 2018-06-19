@@ -101,7 +101,7 @@
 		}
 		.text-insertation-tool div.insertation-moving-tool{
 			top: -20px;
-		    left: -20px;
+		    left: -20px; 
 		}
 		.text-insertation-tool .ui-rotatable-handle.ui-draggable{
 			bottom: -20px;
