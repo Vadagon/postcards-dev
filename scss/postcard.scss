@@ -1,0 +1,248 @@
+.postcard{
+  aside{
+    color: $c_white;
+    text-align: center;
+    padding: 25px 0;
+    .user_info{
+      font-size: 16px;
+      .user_info__name{
+        font-weight: 700;
+        position: relative;
+        padding: 30px 10px 20px;
+        &:after{
+          position: absolute;
+          content: '';
+          width: 60%;
+          left: 20%;
+          bottom: 0;
+          height: 3px;
+          background: $c_orange;
+        }
+      }
+      .user_info__rating{
+        margin: 30px 0 20px;
+        p{
+          margin-bottom: 5px;
+        }
+        .user_info__stars{
+          span{
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 1.5%;
+            width: 15px;
+            height: 15px;
+            background: $c_white;
+            border-radius: 50%;
+            &.active{
+              background: $c_orange;
+            }
+          }
+        }
+      }
+      .user_info__status{
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+    }
+    .filter_btn{
+      margin: 30px auto 0;
+      width: 100%;
+      max-width: 250px;
+      font-size: 16px;
+    }
+    .filter{
+      text-align: left;
+      padding-right: 40px;
+      .filter__title{
+        font: 600 16px $font;
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 10px;
+        margin: 30px 0 20px;
+        &:after{
+          content: '';
+          width: 50%;
+          height: 2px;
+          background: $c_orange;
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+      }
+      .filter__item{
+        margin-bottom: 13px;
+      }
+      .filter__subcategories{
+        margin-left: 18px;
+        margin-top: 10px;
+      }
+      .jq-checkbox.checked{
+        & + label{
+          font-weight: 600;
+        }
+      }
+      label{
+        font-weight: 300;
+        display: inline;
+        cursor: pointer;
+        @include transition(all, .2s, linear);
+      }
+    }
+  }
+  .postcard__container{
+    padding-top: 50px;
+    padding-bottom: 70px;
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      display: block;
+      width: 9900px;
+      top: 0;
+      left: -9940px;
+      height: 100%;
+      z-index: -1;
+      @include linear_gradient(rgba(55,55,55,1), rgba(51,51,51,1), top, to bottom);
+      padding: 60px 0;
+    }
+  }
+  .heading{
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+  .postcard__info{
+    margin-bottom: 50px;
+    @include box-shadow(0,0,15px,1px,rgba(0,0,0,.05));
+  }
+  .postcard__img{
+    font-size: 0;
+    position: relative;
+    .postcard__play{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      display: block;
+      width: 60px;
+      height: 60px;
+      margin: -30px 0 0 -30px;
+      background: url('../img/icons/play.png');
+      @include transition(all, .3s, linear);
+      &:hover{
+        @include scale(1.1);
+      }
+    }
+    .postcard__premium{
+      position: absolute;
+      top: 25px;
+      left: 20px;
+      background: url("../img/icons/premium.png");
+      background-size: cover;
+      width: 40px;
+      height: 52px;
+    }
+  }
+  .postcard__details{
+    text-align: center;
+    padding: 40px 10px 10px;
+    p{
+      font-size: 16px;
+      font-weight: 300;
+      span{
+        font-weight: 700;
+        display: block;
+        margin-top: 5px;
+      }
+    }
+  }
+  .postcard__activity{
+    margin: 35px 0 20px;
+    div{
+      display: inline-block;
+      font: 700 18px $font;
+      vertical-align: middle;
+      margin: 0 7%;
+      img,
+      span{
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+  .btn__blue{
+    font-size: 14px;
+    padding: 7px 15px 10px;
+    span{
+      display: inline-block;
+      vertical-align: middle;
+      min-height: 19px;
+      background: url('../img/icons/like.png') right 0 no-repeat;
+      padding-right: 30px;
+      padding-top: 3px;
+    }
+  }
+  .postcard__operations{
+    margin-top: 30px;
+    a{
+      display: inline-block;
+      font-weight: 500;
+      color: $c_black;
+      margin-right: 7%;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+  .categories__list{
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .postcard__comments{
+    .heading{
+      margin-bottom: 25px;
+    }
+    .postcard__comment_item{
+      margin-bottom: 14px;
+      @include box-shadow(0,0,15px,5px,rgba(0,0,0,.05));
+      padding: 18px 0;
+      font-size: 0;
+      .postcard__comment_user,
+      .postcard__comment_info{
+        display: inline-block;
+        vertical-align: top;
+      }
+      .postcard__comment_user{
+        width: 19%;
+        text-align: center;
+        a{
+          display: inline-block;
+          max-width: 60px;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+      }
+      .postcard__comment_info{
+        font-size: 11px;
+        width: 79%;
+        padding: 0 10px;
+        a{
+          display: inline-block;
+          margin-bottom: 12px;
+          color: $c_black;
+          font: 700 14px $font;
+        }
+        p{
+          margin: 0;
+        }
+      }
+    }
+    .postcard__comment_btn{
+      border-top: 1px solid $c_gray;
+      margin-top: 10px;
+      padding-top: 30px;
+      text-align: right;
+    }
+  }
+
+}

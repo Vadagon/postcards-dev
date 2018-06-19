@@ -1,0 +1,95 @@
+$font: 'MontserratAlternates';
+
+$c_white: #ffffff;
+$c_offwhite: #f8f8f8;
+$c_black: #1c1c1c;
+$c_dark: #474747;
+$c_dgray: #383838;
+$c_lgray: #dbdbdb;
+$c_gray: #bababa;
+$c_gray2: #a0a0a0;
+$c_blue: #29c1ca;
+$c_orange: #f7a32f;
+
+
+@mixin rotate($deg){
+  -moz-transform: rotate($deg); /* Для Firefox */
+  -ms-transform: rotate($deg); /* Для IE */
+  -webkit-transform: rotate($deg); /* Для Safari, Chrome, iOS */
+  -o-transform: rotate($deg); /* Для Opera */
+  transform: rotate($deg);
+}
+
+@mixin translate($x, $y){
+  -moz-transform: translate($x, $y); /* Для Firefox */
+  -ms-transform: translate($x, $y); /* Для IE */
+  -webkit-transform: translate($x, $y); /* Для Safari, Chrome, iOS */
+  -o-transform: translate($x, $y); /* Для Opera */
+  transform: translate($x, $y);
+}
+
+@mixin scale($zoom){
+  -moz-transform: scale($zoom); /* Для Firefox */
+  -ms-transform: scale($zoom); /* Для IE */
+  -webkit-transform: scale($zoom); /* Для Safari, Chrome, iOS */
+  -o-transform: scale($zoom); /* Для Opera */
+  transform: scale($zoom);
+  transform: scale($zoom);
+}
+
+@mixin skewX($deg){
+  -ms-transform: skewX($deg); /* IE 9 */
+  -webkit-transform: skewX($deg); /* Safari */
+  transform: skewX($deg); /* Standard syntax */
+}
+
+@mixin box-shadow($x, $y, $blur, $spread, $color){
+  -webkit-box-shadow: $x $y $blur $spread $color;
+  -moz-box-shadow: $x $y $blur $spread $color;
+  box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin transition($param, $duration, $func){
+  -webkit-transition: $param $duration $func;
+  -moz-transition: $param $duration $func;
+  -o-transition: $param $duration $func;
+  transition: $param $duration $func;
+}
+
+@mixin placeholder($color, $font_size, $font_family, $font_style){
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color;
+    font: $font_style $font_size $font_family;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: $color;
+    font: $font_style $font_size $font_family;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: $color;
+    font: $font_style $font_size $font_family;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $color;
+    font: $font_style $font_size $font_family;
+  }
+}
+@mixin linear_gradient($color1, $color2, $direction, $direction2){
+  background: $color1;
+  background: -moz-linear-gradient($direction, $color1 0%, $color2 100%);
+  background: -webkit-linear-gradient($direction, $color1 0%, $color2 100%);
+  background: -o-linear-gradient($direction, $color1 0%, $color2 100%);
+  background: -ms-linear-gradient($direction, $color1 0%, $color2 100%);
+  background: linear-gradient($direction2, $color1 0%, $color2 100%);
+}
+
+@-webkit-keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}

@@ -1,0 +1,269 @@
+.creation{
+  font-size: 0;
+  display: flex;
+  min-height: 600px;
+  aside,
+  .creation__postcard{
+    display: inline-block;
+    vertical-align: top;
+  }
+  aside{
+    width: 30%;
+    background: $c_dark;
+    color: $c_white;
+    position: relative;
+    .creation__tools,
+    .creation__tool_details{
+      font-size: 14px;
+    }
+    .creation__tools{
+      width: 35%;
+      height: 100%;
+      font: 500 10px $font;
+    }
+    .creation__tool{
+      background-position: 10px center;
+      background-repeat: no-repeat;
+      padding: 20px 5px 20px 50px;
+      cursor: pointer;
+      &.active,
+      &:hover{
+        background-color: $c_dgray;
+        color: $c_blue;
+      }
+      &.active{
+        .creation__tool_details{
+          display: block;
+        }
+      }
+      &.tool_design{
+        background-image: url('../img/icons/tool1.png');
+        &.active,
+        &:hover{
+          background-image: url('../img/icons/tool1_active.png');
+        }
+      }
+      &.tool_imgs{
+        background-image: url('../img/icons/tool2.png');
+        &.active,
+        &:hover{
+          background-image: url('../img/icons/tool2_active.png');
+        }
+      }
+      &.tool_bg{
+        background-image: url('../img/icons/tool3.png');
+        &.active,
+        &:hover{
+          background-image: url('../img/icons/tool3_active.png');
+        }
+      }
+      &.tool_text{
+        background-image: url('../img/icons/tool4.png');
+        &.active,
+        &:hover{
+          background-image: url('../img/icons/tool4_active.png');
+        }
+      }
+      &.tool_sound{
+        background-image: url('../img/icons/tool5.png');
+        &.active,
+        &:hover{
+          background-image: url('../img/icons/tool5_active.png');
+        }
+      }
+      &.tool_video{
+        background-image: url('../img/icons/tool6.png');
+        &.active,
+        &:hover{
+          background-image: url('../img/icons/tool6_active.png');
+        }
+      }
+      &.tool_animation{
+        background-image: url('../img/icons/tool7.png');
+        &.active,
+        &:hover{
+          background-image: url('../img/icons/tool7_active.png');
+        }
+      }
+      span{
+        display: block;
+        min-height: 30px;
+        padding-top: 10px;
+      }
+    }
+    .creation__tool_details{
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 65%;
+      height: 100%;
+      max-height: 100%;
+      overflow: hidden;
+      overflow-y: scroll;
+      padding: 40px 12px;
+      background: $c_dgray;
+      color: $c_white;
+      cursor: auto;
+      .heading{
+        color: $c_white;
+        font-size: 16px;
+        font-weight: 700;
+        padding-bottom: 15px;
+        &:after{
+          width: 100%;
+          left: 0;
+          height: 2px;
+        }
+      }
+      .creation__upload_img{
+        margin: 20px 0;
+        input{
+          display: none;
+        }
+        label{
+          font: 600 12px $font;
+          text-transform: uppercase;
+          border: 1px solid $c_white;
+          border-radius: 15px;
+          padding: 7px;
+          width: 100%;
+          text-align: center;
+          cursor: pointer;
+          @include transition(all, .2s, ease-in);
+          &:hover{
+            background: $c_white;
+            color: $c_black;
+          }
+        }
+      }
+    }
+    .creation__gallery{
+      overflow: hidden;
+      .creation__gallery_img{
+        margin-bottom: 14px;
+        position: relative;
+        &.premium{
+          &:before{
+            position: absolute;
+            content: '';
+            left: 10px;
+            top: 5px;
+            background: url('../img/icons/premium.png') no-repeat;
+            background-size: contain;
+            width: 14px;
+            height: 20px;
+          }
+        }
+        img{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .creation__postcard{
+    width: 70%;
+    text-align: center;
+    padding-top: 30px;
+    position: relative;
+    .creation_playground{
+      padding: 0 10px;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 40px;
+      min-height: 400px;
+    }
+    .creation_playground_controls{
+      position: absolute;
+      left: 50%;
+      margin-left: -180px;
+      bottom: -55px;
+      background: $c_blue;
+      padding: 8px 20px;
+      border-radius: 20px;
+      z-index: 100;
+      a,
+      .zoom{
+        display: inline-block;
+        vertical-align: middle;
+        color: $c_white;
+        font: 500 10px/20px $font;
+        min-height: 20px;
+      }
+      .cancel,
+      .return{
+        padding-left: 25px;
+        background-position: 0 center;
+        background-repeat: no-repeat;
+        margin-right: 20px;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+      .cancel{
+        background-image: url('../img/icons/cancel.png');
+      }
+      .return{
+        background-image: url('../img/icons/return.png');
+      }
+      .zoom{
+        border-left: 1px solid $c_white;
+        padding-left: 20px;
+        span{
+          font: 700 12px $font;
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0 10px;
+        }
+      }
+      .zoom_minus,
+      .zoom_plus{
+        width: 20px;
+        height: 20px;
+        @include transition(all, .2s, linear);
+        &:hover{
+          @include scale(1.1);
+        }
+      }
+      .zoom_minus{
+        background: url('../img/icons/zoom_minus.png');
+      }
+      .zoom_plus{
+        background: url('../img/icons/zoom_plus.png');
+      }
+    }
+    .creation__controls{
+      background: $c_dark;
+      font: 500 14px $font;
+      padding: 42px 0 25px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      a{
+        color: $c_white;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 3%;
+        padding-right: 25px;
+        background-position: right center;
+        background-repeat: no-repeat;
+        &:hover{
+          opacity: .8;
+        }
+      }
+      .creation__preview{
+        background-image: url('../img/icons/ctool1.png');
+      }
+      .creation__save{
+        background-image: url('../img/icons/ctool2.png');
+      }
+      .creation__share{
+        background-image: url('../img/icons/ctool3.png');
+      }
+      .creation__download{
+        background-image: url('../img/icons/ctool4.png');
+      }
+    }
+  }
+}

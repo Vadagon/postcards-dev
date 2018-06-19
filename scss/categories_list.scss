@@ -1,0 +1,36 @@
+.categories__list{
+  margin-top: 50px;
+  text-align: center;
+  .categories__item{
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    @include transition(transform, .2s, ease-out);
+    &:hover{
+      @include scale(1.04);
+      @include box-shadow(0,0,7px,1px,rgba(0,0,0,.05));
+      .categories__title{
+        color: $c_orange;
+      }
+    }
+  }
+  a{
+    display: block;
+  }
+  .categories__title{
+    display: block;
+    font: 600 16px $font;
+    color: $c_black;
+    padding: 18px 0;
+    position: relative;
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 35%;
+      width: 30%;
+      height: 3px;
+      background: $c_orange;
+    }
+  }
+}

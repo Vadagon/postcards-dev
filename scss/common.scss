@@ -1,0 +1,227 @@
+@font-face {
+  font-family: $font;
+  src: url("../fonts/MontserratAlternates-Light.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: $font;
+  src: url("../fonts/MontserratAlternates-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: $font;
+  src: url("../fonts/MontserratAlternates-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: $font;
+  src: url("../fonts/MontserratAlternates-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: $font;
+  src: url("../fonts/MontserratAlternates-Bold.ttf");
+  font-weight: 700;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font: normal 14px $font, Arial, sans-serif;
+  color: $c_black;
+}
+.wrapper{
+  margin: 0 auto;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  &.inner{
+    padding-top: 97px;
+    header{
+      background: $c_orange;
+      @include box-shadow(0, 5px, 5px, 0, rgba(0,0,0,.1));
+    }
+  }
+}
+.fleft{
+  float: left;
+}
+.fright{
+  float: right;
+}
+a:hover{
+  text-decoration: none;
+}
+button,
+a,
+input,
+textarea{
+  &:focus{
+    outline: none;
+  }
+}
+img{
+  max-width: 100%;
+}
+
+.btn_custom{
+  display: inline-block;
+  border: none;
+  border-radius: 25px;
+  text-transform: uppercase;
+  padding: 15px 20px;
+  cursor: pointer;
+  //@include transition(all, .5s, linear);
+}
+.btn__blue{
+  @extend .btn_custom;
+  background: $c_blue;
+  color: $c_white;
+  font: 700 16px $font;
+  &:hover,
+  &:focus,
+  &.active{
+    outline: none;
+    color: $c_white;
+    @include linear_gradient(rgba(255,183,94,1), rgba(240,146,14,1), left, to right);
+  }
+}
+
+.heading{
+  font: 600 24px $font;
+  color: $c_black;
+  text-transform: uppercase;
+  max-width: 400px;
+  padding-bottom: 20px;
+  position: relative;
+  margin-bottom: 47px;
+  &.heading__center{
+    text-align: center;
+    margin: 0 auto;
+    &:after{
+      width: 20%;
+      left: 40%;
+    }
+  }
+  &:after{
+    content: '';
+    width: 23%;
+    height: 3px;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: $c_orange;
+  }
+}
+
+.overlay{
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  z-index: 1000;
+}
+
+.popup{
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  top: 10%;
+  left: 50%;
+  width: 310px;
+  margin-left: -155px;
+  background: #fff;
+  border-radius: 35px;
+  padding: 30px 30px 50px;
+  &.md{
+    width: 570px;
+    margin-left: -285px;
+    padding: 30px 40px;
+  }
+  .popup__close{
+    text-align: right;
+    margin-bottom: 25px;
+    .popup__close_btn{
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      background: url('../img/icons/close.png');
+    }
+  }
+}
+
+.tabs{
+  .tabs__links{
+    text-align: center;
+    a{
+      display: inline-block;
+      text-transform: uppercase;
+      color: $c_gray;
+      font: 500 16px $font;
+      margin-right: 30px;
+      &.active{
+        color: $c_black;
+      }
+      &:last-child{
+        margin: 0;
+      }
+    }
+  }
+  .tabs__content{
+    margin: 10px 0;
+    .tabs__item{
+      display: none;
+      &:first-child{
+        display: block;
+      }
+    }
+  }
+}
+
+.form{
+  input{
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $c_gray;
+    text-align: center;
+    height: 30px;
+    margin-bottom: 12px;
+    @include placeholder($c_gray, 14px, $font, 300);
+    padding: 0 5px;
+    &:focus{
+      border-color: $c_orange;
+    }
+  }
+  textarea{
+    width: 100%;
+    height: 130px;
+    border: 1px solid $c_gray;
+    resize: none;
+    margin-bottom: 12px;
+    padding: 10px;
+    @include placeholder($c_gray, 14px, $font, 300);
+    &:focus{
+      border-color: $c_orange;
+    }
+  }
+  .btn__blue{
+    font-size: 12px;
+    padding: 7px 12px;
+    min-width: 145px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,64 @@
+.popup__auth{
+  .form{
+    margin: 30px 0 40px;
+    text-align: center;
+    input{
+      width: 85%;
+      margin: 0 auto 12px;
+    }
+    .btn__blue{
+      margin-top: 18px;
+    }
+  }
+  .popup__social{
+    font: 500 16px $font;
+    text-align: center;
+    a{
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 5%;
+      background: url('../img/icons/auth.png') no-repeat;
+      overflow: hidden;
+      text-indent: -9999px;
+      text-align: left;
+      &:hover{
+        opacity: .9;
+      }
+      &.ok{
+        background-position: -0px -13px;
+        width: 16px;
+        height: 28px;
+      }
+      &.vk{
+        background-position: -0px -0px;
+        width: 23px;
+        height: 13px;
+      }
+      &.fb{
+        background-position: -0px -41px;
+        width: 12px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+.popup__comment{
+  .user__info{
+    margin-bottom: 20px;
+  }
+  .user__icon{
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    max-width: 50px;
+  }
+  .user__name{
+    margin-top: 5px;
+    font: 600 16px $font;
+    max-width: 200px;
+  }
+  .btn__blue{
+    margin-top: 5px;
+  }
+}

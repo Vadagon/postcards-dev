@@ -1,0 +1,91 @@
+.profile{
+  .profile__main{
+    padding: 65px 0;
+    background: url('../img/profile.jpg') center center/cover no-repeat;
+    color: $c_white;
+    font-size: 16px;
+    .profile__img{
+      max-width: 176px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .profile__name{
+      font: 600 24px $font;
+      text-transform: uppercase;
+      position: relative;
+      padding: 20px 0 10px;
+      &:after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 85px;
+        background: $c_orange;
+      }
+    }
+    .profile__rating{
+      margin: 20px 0;
+      font-weight: 300;
+      .profile__stars{
+        display: inline-block;
+        margin-left: 12px;
+        span{
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0 4px;
+          width: 15px;
+          height: 15px;
+          background: $c_white;
+          border-radius: 50%;
+          &.active{
+            background: $c_orange;
+          }
+        }
+      }
+    }
+    .profile__status{
+      font-weight: 600;
+    }
+    .profile__activity{
+      font: 600 18px $font;
+      margin: 15px 0;
+      div{
+        display: inline-block;
+        margin-right: 35px;
+        &:last-child{
+          margin: 0;
+        }
+      }
+      span{
+        margin-right: 5px;
+      }
+    }
+  }
+  .profile__premium{
+    background: $c_offwhite;
+    padding: 78px 0;
+    font: 300 16px/24px $font;
+    .heading{
+      margin-bottom: 30px;
+      max-width: 100%;
+      &:after{
+        width: 100%;
+      }
+    }
+    .profile__remain{
+      text-align: center;
+      padding-top: 30px;
+      span{
+        display: block;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+    }
+    .btn__blue{
+      width: 100%;
+      padding: 15px 0;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+header{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  padding: 10px 0;
+  @include transition(all, .1s, linear);
+  &.scrolled{
+    background: $c_orange;
+    @include box-shadow(0, 5px, 5px, 0, rgba(0,0,0,.1));
+  }
+  .header__logo{
+    display: block;
+    background: url("../img/logo.png") 0 0/contain no-repeat;
+    width: 100%;
+    max-width: 205px;
+    min-height: 79px;
+    @include transition(background, .2s, linear);
+    &:hover{
+      background-image: url('../img/logo_hover.png');
+    }
+  }
+  .header__links{
+    text-align: right;
+    font-weight: 700;
+    padding-top: 25px;
+    &.user{
+      padding-top: 13px;
+    }
+    a{
+      color: $c_white;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 4%;
+      @include transition((color,background), .3s, ease-in);
+      &:hover{
+        text-decoration: underline;
+      }
+      &.header__auth_btn{
+        border: 2px solid $c_white;
+        border-radius: 25px;
+        font-size: 10px;
+        text-transform: uppercase;
+        padding: 6px 3%;
+        &:hover{
+          background: $c_white;
+          color: $c_black;
+          text-decoration: none;
+        }
+      }
+      &.header__auth_user{
+        text-align: left;
+        &:hover{
+          text-decoration: none;
+        }
+        i{
+          display: inline-block;
+          vertical-align: middle;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+        span{
+          font-size: 10px;
+          display: inline-block;
+          vertical-align: middle;
+          max-width: 120px;
+        }
+      }
+    }
+    .close_menu,
+    .networks{
+      display: none;
+    }
+  }
+}

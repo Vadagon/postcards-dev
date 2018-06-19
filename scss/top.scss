@@ -1,0 +1,109 @@
+.top{
+  padding-top: 45px;
+  .heading{
+    max-width: 100%;
+    &:after{
+      width: 100%;
+      left: 0;
+    }
+  }
+  .top__heading{
+    font: 700 24px $font;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 85px 0 30px;
+    color: $c_orange;
+    position: relative;
+    &:after{
+      content: '';
+      display: block;
+      margin: 10px auto 0;
+      width: 85px;
+      height: 3px;
+      background: $c_orange;
+    }
+    span{
+      display: block;
+      color: $c_gray2;
+    }
+  }
+  .categories__list{
+    margin-top: 30px;
+  }
+  .top__item{
+    padding: 10px 0;
+  }
+  .top__gray_bg{
+    background: $c_offwhite;
+  }
+  .top__authors_rating{
+    text-align: center;
+    padding-top: 45px;
+    &.top_3{
+      padding: 70px 0 30px;
+    }
+    .heading{
+      margin-bottom: 50px;
+    }
+    aside{
+      font: 700 24px $font;
+      text-transform: uppercase;
+      color: $c_orange;
+      span{
+        display: block;
+      }
+      .top__authors_quantity{
+        font-size: 120px;
+        line-height: 120px;
+      }
+      .top__authors_period{
+        color: $c_gray2;
+      }
+    }
+    .top__user{
+      margin-bottom: 50px;
+      .top__user_img{
+        max-width: 100px;
+        margin: 0 auto;
+        border-radius: 50%;
+      }
+      .top__user_name{
+        font: 600 16px $font;
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 20px;
+        max-width: 200px;
+        margin: 20px auto;
+        &:after{
+          content: '';
+          position: absolute;
+          bottom: 0;
+          width: 50%;
+          left: 25%;
+          height: 2px;
+          background: $c_orange;
+        }
+      }
+      .top__user__rating{
+        font: 300 16px $font;
+        p{
+          margin-bottom: 5px;
+        }
+        .top__user__stars{
+          span {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 3px;
+            width: 15px;
+            height: 15px;
+            background: $c_lgray;
+            border-radius: 50%;
+            &.active {
+              background: $c_orange;
+            }
+          }
+        }
+      }
+    }
+  }
+}
