@@ -182,8 +182,8 @@
 			c.c = $('#constructor-cast-main').eq(0)
 			c.fake = $('#constructor-cast-fake').eq(0)
 
-			c.tools.text('img/main_bg.png')
-			c.showAdditionalSettings('text')
+			// c.tools.text('img/main_bg.png')
+			// c.showAdditionalSettings('text')
 		}
 	}
 
