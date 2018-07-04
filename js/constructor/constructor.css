@@ -1,0 +1,144 @@
+#constructor-cast-container{
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#constructor-cast-main{
+	background-color: blue; 
+	position: absolute; 
+	vertical-align: middle; 
+	border-style: none;
+
+	background-position: center:
+	background-size: cover;
+	font-size: 16px;
+	text-align: left;
+}
+#constructor-cast-fake{
+	text-align: left;
+	font-size: 16px;
+	width: 0;
+	position: absolute; 
+	top: 0;
+	left: 0;
+	height: 0;
+}
+.text-insertation-tool{
+	top: 25px;
+	left: 25px;
+	padding: 5px;
+	border: 1px solid black;
+	cursor: pointer;
+	display: inline-block;
+}
+.box {
+	border: 2px solid black;
+	width: 100px;
+	height: 100px;
+	background-color: green;
+	margin: 27px;
+	position: relative;
+}
+
+.ui-rotatable-handle {
+	background: url(../../ittps://cdn.jsdelivr.net/jquery.ui.rotatable/1.0.1/rotate.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	height: 25px;
+	width: 25px;
+	position: absolute;
+}
+
+.ui-rotatable-handle-sw {
+	bottom: -27px;
+	left: -27px;
+}
+
+.ui-rotatable-handle-nw {
+	top: -27px;
+	left: -27px;
+}
+
+.ui-rotatable-handle-se {
+	bottom: -27px;
+	right: -27px;
+}
+
+.ui-rotatable-handle-ne {
+	top: -27px;
+	right: -27px;
+}
+.text-insertation-tool{
+	top: 50px;
+	left: 50px;
+	padding: 10px;
+	background: none;
+	box-sizing: border-box;
+	position: absolute;
+}
+.text-insertation-tool .insertation-content{
+	// resize: both;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	overflow: hidden;
+}
+.text-insertation-tool > div:not(.ui-resizable-handle){
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+    background-image: url(../../img/icons/cancel.png);
+    background-size: contain;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+}
+.text-insertation-tool div.insertation-moving-tool{
+	top: -20px;
+    left: -20px; 
+    background-image: url(../../img/icons/tool7.png);
+}
+.text-insertation-tool .ui-rotatable-handle.ui-draggable{
+	bottom: -20px;
+    left: -20px;
+}
+.text-insertation-tool div.insertation-editing-tool{
+	top: -20px;
+    right: -20px;
+    background-image: url(../../img/icons/close.png);
+}
+.text-insertation-tool:not(.editable){
+	border: none;
+}
+.text-insertation-tool:not(.editable) > div{
+	display: none;
+}
+.text-insertation-tool:not(.editable) .insertation-content {
+	/*resize: none;*/
+}
+
+
+.constructor-additional-ui{
+	display: none;
+}
+
+
+.insertation-content{
+	min-width: 150px;
+}
+
+
+
+.constructor-additional-ui{
+	font-size: 16px;
+	left: -360px;
+	background-color: rgba(255,255,255,1);
+	border: 1px solid black;
+	position: absolute;
+}
+.constructor-additional-ui *{
+	/*display: inline-block;*/
+}
