@@ -85,6 +85,7 @@
 	height: 100%;
 	display: inline-block;
 	overflow: hidden;
+	text-decoration: inherit;
 }
 .text-insertation-tool > div:not(.ui-resizable-handle){
     background-position: 0 center;
@@ -134,9 +135,8 @@
 
 .constructor-additional-ui{
 	font-size: 16px;
-	left: -360px;
+	left: 0px;
 	background-color: rgba(255,255,255,1);
-	border: 1px solid black;
 	position: absolute;
 }
 .constructor-additional-ui *{

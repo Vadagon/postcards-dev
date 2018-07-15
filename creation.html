@@ -272,7 +272,91 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/godswearhats/jquery-ui-rotatable@1.1/jquery.ui.rotatable.css">
 <script src="https://cdn.jsdelivr.net/gh/godswearhats/jquery-ui-rotatable@1.1/jquery.ui.rotatable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css">
 
-<script src="js/constructor-cast.js"></script>
+<script src="js/constructor/main.js"></script>
+
+
+
+
+<style type="text/css">
+    
+
+/*! CSS Used from: https://static.crello.com/style/app-styles.css?v=1.0.231 */
+*{-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+input{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text;}
+button{padding:0;}
+input[type=number]{-webkit-appearance:textfield;-moz-appearance:textfield;appearance:textfield;}
+input[type=number]:focus::-webkit-input-placeholder{opacity:0;}
+input[type=number]:focus:-ms-input-placeholder,input[type=number]:focus::-ms-input-placeholder{opacity:0;}
+input[type=number]:focus::placeholder{opacity:0;}
+svg:not(:root){overflow:hidden;}
+button,input{font-family:Geometria;}
+button,input{font-size:100%;line-height:1.15;margin:0;}
+button,input{overflow:visible;}
+button{text-transform:none;}
+input{outline:0;}
+button{cursor:pointer;outline:0;-webkit-appearance:button;-moz-appearance:button;appearance:button;}
+button{border:0;background:0 0;}
+[data-categ]>*{pointer-events:none!important;}
+._controlInputNumber_q0usp_1{font-size:13px;color:#fff;text-align:center;}
+._panelWrapperOpen_1xf1s_54{position:absolute;top:-10px;right:calc(100% + 10px);width:270px;min-height:60px;border:1px solid #333b4a;background-color:rgba(23,29,42,.95);}
+._panelWrapperOpen_1xf1s_54:before{content:"";position:absolute;left:100%;top:23px;width:0;height:0;border-style:solid;border-width:5px 0 5px 5px;border-color:transparent transparent transparent rgba(23,29,42,.95);}
+._panelWrapperOpenBorder_1xf1s_96{height:9px;background:-webkit-gradient(linear,left top,right top,from(#334059),color-stop(8%,#334059),to(#15728c));background:linear-gradient(90deg,#334059,#334059 8%,#15728c);}
+._selectInput_gx3ws_49:focus+label{opacity:0;}
+._textPositionCenter_gx3ws_128 svg,._textPositionLeft_gx3ws_127 svg,._textPositionRight_gx3ws_129 svg{fill:#fff;}
+._textBold_gx3ws_121:hover,._textItalic_gx3ws_122:hover,._textPanelBtn_gx3ws_120:hover,._textPositionCenter_gx3ws_128:hover,._textPositionLeft_gx3ws_127:hover,._textPositionRight_gx3ws_129:hover,._textUnderline_gx3ws_123:hover,._textUppercase_gx3ws_124:hover{background-color:#51a6ea;}
+._selectInput_gx3ws_49{width:27px;padding:0 3px 0 0;text-align:right;border:0;background-color:transparent;}
+._rangeInput_gx3ws_61{width:37px;height:25px;margin-left:10px;padding:0 2px;border-radius:2px;border:1px solid #373f4e;background-color:#282e3b;}
+._panelWrapperName_gx3ws_75{text-align:center;color:#fff;font-size:11px;font-family:GeometriaMedium;text-transform:uppercase;height:39px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-bottom:1px solid #333b4a;}
+._panelText_gx3ws_88{width:240px;margin:9px auto 0;}
+._panelTextLine_gx3ws_93{margin-top:11px;width:100%;border-bottom:1px dotted #333b4a;}
+._panelFontSize_gx3ws_99,._topBtnWrapper_gx3ws_100{margin-top:11px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row wrap;flex-flow:row wrap;}
+._textStyle_gx3ws_114{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;width:130px;}
+._textBold_gx3ws_121,._textItalic_gx3ws_122,._textPanelBtn_gx3ws_120,._textPositionCenter_gx3ws_128,._textPositionLeft_gx3ws_127,._textPositionRight_gx3ws_129,._textUnderline_gx3ws_123,._textUppercase_gx3ws_124{width:29px;height:29px;font-size:13px;color:#fff;text-align:center;border-radius:1px;-webkit-transition:all .4s;transition:all .4s;background-color:#333b4a;}
+._textItalic_gx3ws_122{font-family:GeometriaLightItalic;}
+._textUnderline_gx3ws_123{font-family:GeometriaMedium;text-decoration:underline;}
+._textUppercase_gx3ws_124{text-transform:uppercase;}
+.active{background-color:#51a6ea;}
+._bottomBtnWrapper_gx3ws_171{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;}
+._bottomBtnWrapper_gx3ws_171{margin-top:11px;}
+._textPosition_gx3ws_127{padding-left:6px;border-left:1px dotted #333b4a;width:104px;}
+._fontColor_gx3ws_191,._textPosition_gx3ws_127{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;}
+._fontColor_gx3ws_191{margin-left: auto;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
+._fontRanges_gx3ws_197{padding-bottom:8px;}
+._fontLetterSpacing_gx3ws_202,._fontLineHeight_gx3ws_203,._fontSizeScroll_gx3ws_201{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;}
+._fontColorText_gx3ws_209,._fontLetterSpacingText_gx3ws_211,._fontLineHeightText_gx3ws_212,._fontSizeScrollText_gx3ws_210{margin-right:10px;font-family:GeometriaLight;font-size:12px;color:#fff;}
+._fontColorBgr_gx3ws_219{width:65px;height:30px;border-radius:2px;background-position:50%;background-repeat:no-repeat;background-size:cover;font-size:13px;font-family:GeometriaLightItalic;color:#181e2c;background-color:#fff;-webkit-transition:all .25s;transition:all .25s;border:1px solid rgba(255,255,255,.4);}
+._rangeWidth_gx3ws_239{-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:2px 0;display:-webkit-box;display:-ms-flexbox;display:flex;}
+._selectFontSizeWrapper_gx3ws_245{display:-webkit-box;display:-ms-flexbox;display:flex;width:57px;height:29px;border-radius:2px;border:1px solid #373f4e;background-color:#282e3b;}
+._selectFontSizeLabel_gx3ws_254{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:text;-webkit-transition:all .2s;transition:all .2s;}
+._selectFontSizeLabel_gx3ws_254,._textSize_gx3ws_261{font-family:GeometriaLight;font-size:12px;color:#fff;}
+._textSize_gx3ws_261{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:1;-ms-flex:1;flex:1;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;cursor:pointer;}
+._selectedSize_gx3ws_277{display:none;}
+._selectControlSize_gx3ws_281{width:100%;height:27px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;}
+._expandIcon_gx3ws_322{width:6px;height:4px;fill:#fff;}
+._dd__wrapper_gx3ws_328{position:relative;width:240px;}
+._dd__selectControl_gx3ws_335{height:29px;padding:3px 8px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;font-family:GeometriaLight;font-size:12px;color:#fff;cursor:pointer;overflow:hidden;border-radius:2px;background-color:#333b4a;}
+._dd__expandIcon_gx3ws_350{width:6px;height:4px;-ms-flex-negative:0;flex-shrink:0;fill:#fff;}
+._dd__selected_gx3ws_357{width:135px;letter-spacing:.06em;}
+._selectedValueRenderer_gx3ws_362{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+._slider_1ro49_7{width:114px;height:3px;cursor:pointer;}
+._bar_1ro49_25{height:100%;border-radius:20%;}
+._bar_1ro49_25:nth-child(odd){background-color:#51a6ea;}
+._bar_1ro49_25:nth-child(2n){background-color:#4f5c75;}
+._handle_1ro49_58{width:12px;height:12px;border:2px solid #fff;background-color:#51a6ea;-webkit-transform:translateY(-5px);transform:translateY(-5px);border-radius:50%;}
+/*! CSS Used fontfaces */
+@font-face{font-family:Geometria;src:url(https://static.crello.com/fonts/Geometria-Regular/Geometria-Regular.woff2) format("woff2"),url(https://static.crello.com/fonts/Geometria-Regular/Geometria-Regular.woff) format("woff"),url(https://static.crello.com/fonts/Geometria-Regular/Geometria-Regular.ttf) format("truetype");}
+@font-face{font-family:GeometriaMedium;src:url(https://static.crello.com/fonts/Geometria-Medium/Geometria-Medium.woff2) format("woff2"),url(https://static.crello.com/fonts/Geometria-Medium/Geometria-Medium.woff) format("woff"),url(https://static.crello.com/fonts/Geometria-Medium/Geometria-Medium.ttf) format("truetype");}
+@font-face{font-family:GeometriaLightItalic;src:url(https://static.crello.com/fonts/Geometria-LightItalic/Geometria-LightItalic.woff2) format("woff2"),url(https://static.crello.com/fonts/Geometria-LightItalic/Geometria-LightItalic.woff) format("woff");}
+@font-face{font-family:GeometriaLight;src:url(https://static.crello.com/fonts/Geometria-Light/Geometria-Light.woff2) format("woff2"),url(https://static.crello.com/fonts/Geometria-Light/Geometria-Light.woff) format("woff"),url(https://static.crello.com/fonts/Geometria-Light/Geometria-Light.ttf) format("truetype");}
+
+
+</style>
+
+
+
+
 </body>
 </html>
