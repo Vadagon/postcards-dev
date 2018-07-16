@@ -8,20 +8,20 @@
 		width: 661,
 		height: 420,
 		position: '',
-		activeTool: 'bg',
+		activeTool: 'design',
 		listeners: function(){
 			$('.creation__tool').click(function(){
 				c.activeTool = $(this).attr('class').replace('creation__tool', '').replace('tool_', '').replace('active', '').trim();
 			})
 			$('.creation__tool .creation__gallery_img').click(function(){
-				c.blur(c.fake.find('*'))
+				c.blur()
 				c.tools[c.activeTool]($(this).data('bg'))
 				c.showAdditionalSettings(c.activeTool);
 			})
-			c.fake.on('click', '.text-insertation-tool .insertation-content', function(){
+			c.c.on('click', '.text-insertation-tool .insertation-content', function(){
 				console.log($(this).parent().hasClass('editable'))
 				if(!$(this).parent().hasClass('editable')){
-					c.blur(c.fake.find('*'))
+					c.blur()
 					c.focus($(this).parent())
 					c.showAdditionalSettings($(this).parent().data("creation__tool"));
 				}
@@ -56,25 +56,37 @@
 					default:
 						console.log(1);
 				}
-				c.fake.find('.editable').css(css);	
+				c.c.find('.editable').css(css);	
 				$(this).parent().find('.bindParams').text($(this).val())
 				console.log(css)
 			})
-			c.c.click(function(){
-				c.blur(c.fake.find('*'))
+			c.fake.click(function(){
+				c.blur()
 			})
 		},
 		tools: {
-			design: function(){
-
+			design: function(e){
+				console.log(1)
+				c.c.find('*:not(#constructor-cast-fake)').remove()
+				e = JSON.parse('['+e+']');
+				// console.log(e)
+				e.forEach(function(el, id){
+					if(!(id%2)){
+						c.tools[e[id]](...e[id+1])
+						console.log(e[id])
+					}
+				});
+				c.blur();
 			},
 			img: function(e){
-				console.log(e)
-				$(`<div class="text-insertation-tool editable" data-creation__tool="img">
+				var el = $(`<div class="text-insertation-tool editable" data-creation__tool="img">
 					<img src="${e}" class="insertation-content">
 					<div class="insertation-moving-tool"></div>
 					<div class="insertation-editing-tool"></div>
-					</div>`).appendTo(c.fake)
+					</div>`).appendTo(c.c)
+				.css({
+					width: '150px'
+				})
 				.draggable({
 					containment: "#constructor-cast-main",
 					handle: ".insertation-moving-tool"
@@ -91,27 +103,54 @@
 			bg: function(e){
 				c.c.css({backgroundImage: 'url('+e+')'})
 			},
-			text: function(){
-				$(`<div class="text-insertation-tool editable" data-creation__tool="text">
-					<font contenteditable="true" class="insertation-content">sample text</font>
+			text: function(e, css){
+				var div = $(`<div class="text-insertation-tool editable" data-creation__tool="text">
+					<font contenteditable="true" class="insertation-content">${e?e:'sample text'}</font>
 					<div class="insertation-moving-tool"></div>
 					<div class="insertation-editing-tool"></div>
-					</div>`).appendTo(c.fake)
+					</div>`).appendTo(c.c)
+				.css({
+					width: '150px'
+				})
 				.resizable({
-					containment: "#constructor-cast-main",
-					handles: 'e, w'
+					containment: "#constructor-cast-main"
+					// handles: 'w'
 				})
 				.draggable({
 					containment: "#constructor-cast-main",
 					handle: ".insertation-moving-tool"
 				}).on('click', '.insertation-editing-tool', function(){
-					// c.blur($(this).parent())
+					c.blur()
 					$(this).parent().remove()
 				}).rotatable();
+				c.css(css, div)
 			}
 		},
-		blur: function(e){
-			e.removeClass('editable').find('.insertation-content').attr('contenteditable', 'false')
+		css: function(css, div){
+			if(!css) return;
+			var style = div.attr('style');
+			div.attr('style', style+css)
+			console.log(css)
+			setTimeout(function() {
+				var match;
+				match = css.match(/[0-9]{1,}(?=%%w)/ig);
+				match && match.forEach(function(el){
+					var d = c.width / 100 * parseInt(el) - div.width()/2;
+					var reg = new RegExp(el+'%%w',"ig");
+					css = css.replace(reg, d+'px')
+				})
+				match = css.match(/[0-9]{1,}(?=%%h)/ig);
+				match && match.forEach(function(el){
+					var d = c.height / 100 * parseInt(el) - div.outerHeight()/2;
+					var reg = new RegExp(el+'%%h',"ig");
+					css = css.replace(reg, d+'px')
+				})
+				console.log(css)
+				div.attr('style', style+css)
+			}, 10);
+		},
+		blur: function(){
+			c.c.find('.editable').removeClass('editable').find('.insertation-content').attr('contenteditable', 'false')
 			c.showAdditionalSettings()
 		},
 		focus: function(e){
@@ -141,8 +180,9 @@
 			c.reposition()
 			$('.creation_playground').append(`
 				<div id="constructor-cast-container">
-					<div id="constructor-cast-main" style="height: ${c.height}px; width: ${c.width}px; left: ${c.position.left}px; top: ${c.position.top}px;"></div>
-					<div id="constructor-cast-fake"></div>
+					<div id="constructor-cast-main" style="height: ${c.height}px; width: ${c.width}px; left: ${c.position.left}px; top: ${c.position.top}px;">
+						<div id="constructor-cast-fake"></div>
+					</div>
 					<div class="constructor-additional-ui" id="constructor-settings-text">
 
 						<div class="_panelWrapperOpen_1xf1s_54">
@@ -270,8 +310,9 @@
 			c.c = $('#constructor-cast-main').eq(0)
 			c.fake = $('#constructor-cast-fake').eq(0)
 
-			c.tools.text('img/main_bg.png')
-			c.showAdditionalSettings('text')
+			// c.tools.design('"text", ["ЦЕНТР", "text-align: center; width: 66%; font-size: 52px; text-decoration: underline; left: 50%%w; top: 50%%h;"], "bg", ["img/no_image.jpg"]')
+			// c.tools.design('"text", ["top-left", "width: 140px; font-size: 22px; font-weight: bold; left: 2px; top: 2px"], "text", ["top-right", "text-align: right; width: 140px; font-size: 22px; font-weight: bold; right: 2px; top: 2px"], "text", ["bottom-left", "width: 160px; font-size: 22px; font-weight: bold; left: 2px; bottom: 2px;"], "text", ["bottom-right", "text-align: right; width: 180px; font-size: 22px; font-weight: bold; right: 2px; bottom: 2px;"], "bg", ["img/main_bg.png"]')
+			// c.showAdditionalSettings('text')
 		}
 	}
 
