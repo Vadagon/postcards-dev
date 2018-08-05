@@ -8,8 +8,10 @@
 		width: 661,
 		height: 420,
 		position: '',
-		activeTool: 'design',
+		activeTool: 'sound',
 		listeners: function(){
+			$('.creation__preview').click(c.preview.bind(0, !1));
+			$(document).on('click', '#constructor-cast-container-preview > span', c.preview.bind(0, !0));
 			$('.creation__tool').click(function(){
 				c.activeTool = $(this).attr('class').replace('creation__tool', '').replace('tool_', '').replace('active', '').trim();
 			})
@@ -124,6 +126,12 @@
 					$(this).parent().remove()
 				}).rotatable();
 				c.css(css, div)
+			},
+			sound: function(e){
+				if(c.sound) c.sound.stop();
+				c.sound = new Howl({
+				  src: [e]
+				});
 			}
 		},
 		css: function(css, div){
@@ -175,6 +183,18 @@
 			c.height = $('.creation_playground img').css('opacity', '0').height()	
 			c.position = $('.creation_playground img').position()
 			console.log(c)
+		},
+		preview: function(e){
+			if(c.sound) c.sound.stop();
+			$('#constructor-cast-container-preview').remove();
+			if(e) return;
+			$('.creation_playground').append(`
+				<div id="constructor-cast-container-preview" style="position: absolute; top: 0; height: 100%; width: 100%; display: block; position: absolute; top: 0; left: 0;">
+					<span style="position: absolute; font-size: 20px; background-color: #29c1cab8; border-radius: 50%; width: 28px; color: white; height: 28px; top: 0px; right: -23px;">x</span>
+					${$('.creation_playground').html()}
+				</div>
+			`)
+			if(c.sound) c.sound.play();
 		},
 		init: function(){
 			c.reposition()
